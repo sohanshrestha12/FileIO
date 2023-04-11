@@ -16,8 +16,16 @@ public class Main {
             throw new RuntimeException(e);
         }
         try {
+            int newChar;
             FileReader fileReader = new FileReader(file);
-            while ()
+            while (true){
+                try {
+                    if (!((newChar = fileReader.read()) != -1)) break;
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.print((char)newChar );
+            }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
